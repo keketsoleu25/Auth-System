@@ -1,78 +1,119 @@
-# Auth System
+# 🔐 Auth System
 
-A full authentication system built with Next.js, NextAuth.js (Auth.js v5), and Prisma. Supports email/password and Google OAuth login, email verification, password reset, and role-based route protection.
+A full authentication system built with Next.js 16, Auth.js (NextAuth v5), Prisma, and PostgreSQL. Supports email/password and Google OAuth login, email verification, password reset, and role-based route protection.
 
-## Features
+Built as a portfolio project to understand authentication architecture end-to-end — not just wiring up a library, but working through why each piece (session strategy, token expiry, role checks, rate limiting) is there.
 
-- **Credentials login** — email + password, hashed with bcrypt, validated with Zod
-- **Google OAuth** — sign in with Google via NextAuth's OAuth provider
-- **JWT sessions** — session strategy handled by NextAuth (Auth.js v5)
-- **Email verification** — token-based verification flow with expiry, sent via Nodemailer
-- **Password reset** — token-based reset flow with expiry
-- **Role-based access control** — `USER` / `ADMIN` roles enforced in middleware
-  - `/dashboard` — requires login
-  - `/admin` — requires `ADMIN` role
-  - Logged-in users are redirected away from `/login` and `/register`
+## ✨ Features
 
-## Tech Stack
+**Authentication**
+- Email & password registration
+- Secure login (credentials + Google OAuth)
+- Email verification (token-based, 24h expiry)
+- Password reset (token-based, 1h expiry)
+- Logout
 
-- **Framework:** Next.js 16 (App Router)
-- **Auth:** NextAuth.js (Auth.js) v5
-- **Database:** PostgreSQL
-- **ORM:** Prisma
-- **Validation:** Zod
-- **Password hashing:** bcryptjs
-- **Email:** Nodemailer
-- **Styling:** Tailwind CSS
+**Security**
+- Password hashing with bcrypt (cost factor 12)
+- JWT session management via Auth.js
+- Input validation with Zod
+- Rate limiting on `/api/register` and `/api/forgot-password` (in-memory; resets per server instance — fine for this project, would need Redis/Upstash for a multi-instance production deployment)
+- Email enumeration protection on password reset (always returns the same response whether or not the account exists)
 
-## Getting Started
+**Authorization**
+- `USER` / `ADMIN` roles
+- Role-based middleware protecting `/dashboard` (any logged-in user) and `/admin` (ADMIN only)
+- Logged-in users redirected away from `/login` and `/register`
 
-1. Clone the repo and install dependencies:
-   ```bash
-   npm install
-   ```
+## 🛠 Tech Stack
 
-2. Set up environment variables (create `.env`):
-   ```
-   DATABASE_URL=
-   AUTH_SECRET=
-   GOOGLE_CLIENT_ID=
-   GOOGLE_CLIENT_SECRET=
-   ```
+| Category | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript |
+| Authentication | Auth.js (NextAuth v5) |
+| Database | PostgreSQL |
+| ORM | Prisma 7 (with `@prisma/adapter-pg` driver adapter) |
+| Validation | Zod |
+| Password Hashing | bcryptjs |
+| Email | Resend |
+| Styling | Tailwind CSS |
 
-3. Run Prisma migrations:
-   ```bash
-   npx prisma migrate dev
-   ```
-
-4. Start the dev server:
-   ```bash
-   npm run dev
-   ```
-
-## Project Structure
+## 📁 Project Structure
 
 ```
 src/
   app/
     (auth)/          # login, register, forgot-password, reset-password, verify-email pages
-    api/              # NextAuth handler + register/verify/reset routes
+    api/              # NextAuth handler + register/verify/reset/forgot-password routes
     admin/            # admin-only page
     dashboard/        # authenticated user page
   components/         # auth form, navbar, providers
-  lib/                # auth config, prisma client, mail, token helpers
-  middleware.ts        # route protection (auth + role checks)
+  lib/                # auth config, prisma client, mail (Resend), rate limiter, token helpers
+  middleware.ts        # route protection (runs on Node.js runtime, not Edge — required
+                        # because the Prisma driver adapter needs Node APIs unavailable on Edge)
 prisma/
   schema.prisma        # User, Account, Session, VerificationToken models
 ```
 
-## Notes
+## 🚀 Authentication Flow
 
-- Built with AI-assisted tooling (Claude Code) for scaffolding; the auth flow, schema design, and route protection logic were reviewed, tested, and are understood by the author.
-- This project prioritizes using a well-vetted auth library (NextAuth.js) over hand-rolling session/token logic — a deliberate choice to avoid the common security pitfalls of custom auth implementations.
+```
+Register → Email Verification → Login → Dashboard
+                                           ├── USER
+                                           └── ADMIN (role-gated)
 
-## Possible next steps
+Forgot Password → Email Sent → Reset Password → Login
+```
 
-- Rate limiting on auth endpoints (login, register, password reset)
-- Automated tests for auth flows
-- CSRF protection review
+## ⚙️ Getting Started
+
+```bash
+git clone https://github.com/keketsoleu25/Auth-System.git
+cd Auth-System
+npm install
+cp .env.example .env
+```
+
+Fill in `.env` with real values (see table below), then:
+
+```bash
+npx prisma db push
+npm run dev
+```
+
+> Note: this project doesn't have Prisma migration history (`prisma/migrations`), so schema changes are applied with `prisma db push` rather than `prisma migrate dev/deploy`. A future improvement would be establishing proper migration history with `prisma migrate dev --name init`.
+
+### Environment variables
+
+| Variable | Notes |
+|---|---|
+| `DATABASE_URL` | PostgreSQL connection string (e.g. from Neon) |
+| `AUTH_SECRET` | Generate with `npx auth secret` |
+| `NEXTAUTH_URL` | `http://localhost:3000` locally |
+| `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` | From Google Cloud Console; redirect URI must be `<NEXTAUTH_URL>/api/auth/callback/google` |
+| `RESEND_API_KEY` | From resend.com |
+| `EMAIL_FROM` | `onboarding@resend.dev` works out of the box for testing without domain verification |
+
+## 🧠 What I learned building this
+
+- How session strategy (JWT vs. database sessions) actually works under the hood in Auth.js, and why middleware needs to run on the Node.js runtime rather than Edge once a database driver adapter is involved
+- Token-based flows (email verification, password reset) — generation, expiry, and why email enumeration needs to be prevented by design, not as an afterthought
+- Why rate limiting matters on public-facing auth endpoints, and the tradeoffs of an in-memory limiter vs. a distributed one
+- Debugging real deployment/tooling friction: Prisma 7's driver adapter requirement, Edge Runtime incompatibilities, stale build caches, and workspace-root resolution issues
+
+## 📌 Possible next steps
+
+- Automated tests for the auth flows
+- Real Prisma migration history instead of `db push`
+- Rate limiting on the credentials login path itself (harder — needs a different approach than the route-handler pattern used for register/forgot-password, since login goes through Auth.js's internal `authorize` callback)
+- Two-factor authentication
+- Deployed demo link
+
+## 📖 Notes
+
+This project uses established libraries (Auth.js, Prisma) rather than hand-rolled session/token logic — a deliberate choice to avoid the security pitfalls of custom auth. Some scaffolding was AI-assisted; I reviewed, tested, and worked through the authentication flows and underlying decisions rather than treating any of it as a black box.
+
+## 📄 License
+
+MIT
