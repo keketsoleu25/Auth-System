@@ -25,7 +25,7 @@ export default function Home() {
             Sign in
           </Link>
           <Link
-            href="/signup"
+            href="/register"
             className="btn-gold rounded-full px-5 py-2 text-sm"
           >
             Get started
@@ -55,7 +55,7 @@ export default function Home() {
 
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
           <Link
-            href="/signup"
+            href="/register"
             className="btn-gold inline-flex h-12 items-center justify-center rounded-full px-8 text-base"
           >
             Create account
