@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { signIn } from "next-auth/react";
@@ -57,6 +57,7 @@ export function AuthForm({ mode }: AuthFormProps) {
         return;
       }
 
+      
       const result = await signIn("credentials", {
         email,
         password,
@@ -93,7 +94,7 @@ export function AuthForm({ mode }: AuthFormProps) {
         <p className="mt-1 text-sm" style={{ color: "var(--text-muted)" }}>
           {mode === "login" && "Enter your credentials to continue"}
           {mode === "register" && "Fill in the form to get started"}
-          {mode === "forgot" && "We will send you a reset link"}
+          {mode === "forgot" && "We'll send you a reset link"}
         </p>
       </div>
 
@@ -161,7 +162,7 @@ export function AuthForm({ mode }: AuthFormProps) {
               onChange={(e) => setPassword(e.target.value)}
               className="w-full rounded-md bg-transparent px-3 py-2 text-sm text-white outline-none"
               style={{ border: "1px solid var(--border)" }}
-              placeholder="********"
+              placeholder="••••••••"
             />
           </div>
         )}
@@ -172,7 +173,7 @@ export function AuthForm({ mode }: AuthFormProps) {
           className="btn-gold w-full rounded-md py-2 text-sm disabled:opacity-50"
         >
           {loading
-            ? "Please wait..."
+            ? "Please wait…"
             : mode === "login"
             ? "Sign in"
             : mode === "register"
@@ -203,6 +204,8 @@ export function AuthForm({ mode }: AuthFormProps) {
             disabled={loading}
             className="w-full rounded-md py-2 text-sm font-medium text-white disabled:opacity-50 flex items-center justify-center gap-2 transition-colors"
             style={{ border: "1px solid var(--border)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "var(--card-hover)")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
           >
             Google
           </button>
@@ -216,7 +219,7 @@ export function AuthForm({ mode }: AuthFormProps) {
             <Link href="/register" className="underline underline-offset-4" style={{ color: "var(--electric)" }}>
               Register
             </Link>
-            {" - "}
+            {" · "}
             <Link href="/forgot-password" className="underline underline-offset-4" style={{ color: "var(--electric)" }}>
               Forgot password?
             </Link>
