@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { signIn } from "next-auth/react";
@@ -57,7 +57,6 @@ export function AuthForm({ mode }: AuthFormProps) {
         return;
       }
 
-      // login
       const result = await signIn("credentials", {
         email,
         password,
@@ -84,27 +83,41 @@ export function AuthForm({ mode }: AuthFormProps) {
   }
 
   return (
-    <div className="w-full max-w-sm space-y-6">
+    <div className="w-full max-w-sm space-y-6 auth-card p-8">
       <div className="text-center">
-        <h1 className="text-2xl font-bold tracking-tight">
+        <h1 className="font-display text-2xl font-bold tracking-tight text-white">
           {mode === "login" && "Sign in"}
           {mode === "register" && "Create account"}
           {mode === "forgot" && "Reset password"}
         </h1>
-        <p className="mt-1 text-sm text-zinc-500">
+        <p className="mt-1 text-sm" style={{ color: "var(--text-muted)" }}>
           {mode === "login" && "Enter your credentials to continue"}
           {mode === "register" && "Fill in the form to get started"}
-          {mode === "forgot" && "We'll send you a reset link"}
+          {mode === "forgot" && "We will send you a reset link"}
         </p>
       </div>
 
       {error && (
-        <div className="rounded-md bg-red-50 dark:bg-red-950/50 border border-red-200 dark:border-red-900 px-3 py-2 text-sm text-red-700 dark:text-red-400">
+        <div
+          className="rounded-md border px-3 py-2 text-sm"
+          style={{
+            background: "rgba(192, 38, 211, 0.08)",
+            borderColor: "rgba(192, 38, 211, 0.35)",
+            color: "#e879f9",
+          }}
+        >
           {error}
         </div>
       )}
       {success && (
-        <div className="rounded-md bg-green-50 dark:bg-green-950/50 border border-green-200 dark:border-green-900 px-3 py-2 text-sm text-green-700 dark:text-green-400">
+        <div
+          className="rounded-md border px-3 py-2 text-sm"
+          style={{
+            background: "rgba(245, 158, 11, 0.08)",
+            borderColor: "rgba(245, 158, 11, 0.35)",
+            color: "var(--gold)",
+          }}
+        >
           {success}
         </div>
       )}
@@ -112,40 +125,43 @@ export function AuthForm({ mode }: AuthFormProps) {
       <form onSubmit={handleSubmit} className="space-y-4">
         {mode === "register" && (
           <div>
-            <label className="block text-sm font-medium mb-1">Name</label>
+            <label className="block text-sm font-medium mb-1 text-white">Name</label>
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full rounded-md border border-zinc-300 dark:border-zinc-700 bg-transparent px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-zinc-400"
+              className="w-full rounded-md bg-transparent px-3 py-2 text-sm text-white outline-none"
+              style={{ border: "1px solid var(--border)" }}
               placeholder="Jane Doe"
             />
           </div>
         )}
 
         <div>
-          <label className="block text-sm font-medium mb-1">Email</label>
+          <label className="block text-sm font-medium mb-1 text-white">Email</label>
           <input
             type="email"
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-md border border-zinc-300 dark:border-zinc-700 bg-transparent px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-zinc-400"
+            className="w-full rounded-md bg-transparent px-3 py-2 text-sm text-white outline-none"
+            style={{ border: "1px solid var(--border)" }}
             placeholder="you@example.com"
           />
         </div>
 
         {mode !== "forgot" && (
           <div>
-            <label className="block text-sm font-medium mb-1">Password</label>
+            <label className="block text-sm font-medium mb-1 text-white">Password</label>
             <input
               type="password"
               required
               minLength={6}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full rounded-md border border-zinc-300 dark:border-zinc-700 bg-transparent px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-zinc-400"
-              placeholder="••••••••"
+              className="w-full rounded-md bg-transparent px-3 py-2 text-sm text-white outline-none"
+              style={{ border: "1px solid var(--border)" }}
+              placeholder="********"
             />
           </div>
         )}
@@ -153,10 +169,10 @@ export function AuthForm({ mode }: AuthFormProps) {
         <button
           type="submit"
           disabled={loading}
-          className="w-full rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 py-2 text-sm font-medium hover:opacity-90 disabled:opacity-50"
+          className="btn-gold w-full rounded-md py-2 text-sm disabled:opacity-50"
         >
           {loading
-            ? "Please wait…"
+            ? "Please wait..."
             : mode === "login"
             ? "Sign in"
             : mode === "register"
@@ -169,10 +185,13 @@ export function AuthForm({ mode }: AuthFormProps) {
         <>
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-zinc-200 dark:border-zinc-800" />
+              <div className="w-full border-t" style={{ borderColor: "var(--border)" }} />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-white dark:bg-zinc-950 px-2 text-zinc-500">
+              <span
+                className="px-2"
+                style={{ background: "var(--background-secondary)", color: "var(--text-dim)" }}
+              >
                 Or continue with
               </span>
             </div>
@@ -182,22 +201,23 @@ export function AuthForm({ mode }: AuthFormProps) {
             type="button"
             onClick={handleGoogle}
             disabled={loading}
-            className="w-full rounded-md border border-zinc-300 dark:border-zinc-700 py-2 text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-900 disabled:opacity-50 flex items-center justify-center gap-2"
+            className="w-full rounded-md py-2 text-sm font-medium text-white disabled:opacity-50 flex items-center justify-center gap-2 transition-colors"
+            style={{ border: "1px solid var(--border)" }}
           >
             Google
           </button>
         </>
       )}
 
-      <p className="text-center text-sm text-zinc-500">
+      <p className="text-center text-sm" style={{ color: "var(--text-muted)" }}>
         {mode === "login" && (
           <>
             No account?{" "}
-            <Link href="/register" className="underline underline-offset-4">
+            <Link href="/register" className="underline underline-offset-4" style={{ color: "var(--electric)" }}>
               Register
             </Link>
-            {" · "}
-            <Link href="/forgot-password" className="underline underline-offset-4">
+            {" - "}
+            <Link href="/forgot-password" className="underline underline-offset-4" style={{ color: "var(--electric)" }}>
               Forgot password?
             </Link>
           </>
@@ -205,7 +225,7 @@ export function AuthForm({ mode }: AuthFormProps) {
         {mode === "register" && (
           <>
             Already have an account?{" "}
-            <Link href="/login" className="underline underline-offset-4">
+            <Link href="/login" className="underline underline-offset-4" style={{ color: "var(--electric)" }}>
               Sign in
             </Link>
           </>
@@ -213,7 +233,7 @@ export function AuthForm({ mode }: AuthFormProps) {
         {mode === "forgot" && (
           <>
             Remembered?{" "}
-            <Link href="/login" className="underline underline-offset-4">
+            <Link href="/login" className="underline underline-offset-4" style={{ color: "var(--electric)" }}>
               Sign in
             </Link>
           </>
