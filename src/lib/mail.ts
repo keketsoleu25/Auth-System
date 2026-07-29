@@ -1,20 +1,12 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || "smtp.ethereal.email",
-  port: Number(process.env.SMTP_PORT) || 587,
-  secure: false,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendVerificationEmail(email: string, token: string) {
   const verifyUrl = `${process.env.NEXTAUTH_URL}/verify-email?token=${token}`;
 
-  await transporter.sendMail({
-    from: process.env.EMAIL_FROM || "noreply@auth-system.local",
+  await resend.emails.send({
+    from: process.env.EMAIL_FROM || "Auth System <onboarding@resend.dev>",
     to: email,
     subject: "Verify your email address",
     html: `
@@ -29,8 +21,8 @@ export async function sendVerificationEmail(email: string, token: string) {
 export async function sendPasswordResetEmail(email: string, token: string) {
   const resetUrl = `${process.env.NEXTAUTH_URL}/reset-password?token=${token}`;
 
-  await transporter.sendMail({
-    from: process.env.EMAIL_FROM || "noreply@auth-system.local",
+  await resend.emails.send({
+    from: process.env.EMAIL_FROM || "Auth System <onboarding@resend.dev>",
     to: email,
     subject: "Reset your password",
     html: `
