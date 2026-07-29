@@ -1,4 +1,4 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&family=Space+Mono&display=swap');
 
 :root {
@@ -50,7 +50,6 @@ h1, h2, h3, h4, .font-display {
   font-family: var(--font-display);
 }
 
-/* Card style matching the portfolio's glass-panel look */
 .auth-card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -58,7 +57,6 @@ h1, h2, h3, h4, .font-display {
   backdrop-filter: blur(8px);
 }
 
-/* Gold accent button, matching the portfolio's primary CTA style */
 .btn-gold {
   background: var(--gold);
   color: #05040F;
@@ -69,7 +67,6 @@ h1, h2, h3, h4, .font-display {
   filter: brightness(1.1);
 }
 
-/* Subtle cyan glow border for focus states, echoing --border-glow */
 input:focus, textarea:focus {
   outline: none;
   border-color: var(--electric);
