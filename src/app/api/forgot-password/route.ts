@@ -3,6 +3,7 @@ import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { generateToken, getTokenExpiry } from "@/lib/tokens";
 import { sendPasswordResetEmail } from "@/lib/mail";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
 const schema = z.object({
   email: z.string().email(),
@@ -10,6 +11,15 @@ const schema = z.object({
 
 export async function POST(req: Request) {
   try {
+    const ip = getClientIp(req);
+    const { success } = rateLimit(`forgot-password:${ip}`, 3, 15 * 60 * 1000);
+    if (!success) {
+      return NextResponse.json(
+        { error: "Too many requests. Try again later." },
+        { status: 429 }
+      );
+    }
+
     const body = await req.json();
     const parsed = schema.safeParse(body);
 
