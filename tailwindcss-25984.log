@@ -1,0 +1,142 @@
+2026-07-30T18:11:01.799286Z  INFO tailwindcss_oxide::scanner: Provided sources:
+2026-07-30T18:11:01.800134Z  INFO tailwindcss_oxide::scanner: Source: PublicSourceEntry { base: "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System", pattern: "**/*", negated: false }
+2026-07-30T18:11:01.810882Z  INFO tailwindcss_oxide::scanner: Optimized sources:
+2026-07-30T18:11:01.810994Z  INFO tailwindcss_oxide::scanner: Source: Auto { base: "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System" }
+2026-07-30T18:11:01.818688Z  INFO discover_sources: tailwindcss_oxide::scanner: enter
+2026-07-30T18:11:01.818768Z  INFO discover_sources:walk_synchronous: tailwindcss_oxide::scanner: enter
+2026-07-30T18:11:01.906998Z  INFO discover_sources:walk_synchronous: tailwindcss_oxide::scanner: exit
+2026-07-30T18:11:01.909342Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\app\\dashboard\\page.tsx"
+2026-07-30T18:11:01.909678Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\README.md"
+2026-07-30T18:11:01.909678Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\db-execute.md"
+2026-07-30T18:11:01.909994Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\route.ts"
+2026-07-30T18:11:01.910015Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\app\\layout.tsx"
+2026-07-30T18:11:01.910279Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\app\\page.tsx"
+2026-07-30T18:11:01.910652Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\db-pull.md"
+2026-07-30T18:11:01.910822Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\skills-lock.json"
+2026-07-30T18:11:01.910862Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\components\\auth-form.tsx"
+2026-07-30T18:11:01.911048Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\app\\(auth)\\forgot-password\\page.tsx"
+2026-07-30T18:11:01.911145Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\components\\navbar.tsx"
+2026-07-30T18:11:01.911263Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\app\\(auth)\\login\\page.tsx"
+2026-07-30T18:11:01.911465Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\app\\(auth)\\register\\page.tsx"
+2026-07-30T18:11:01.911476Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\components\\providers.tsx"
+2026-07-30T18:11:01.911610Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\db-push.md"
+2026-07-30T18:11:01.911680Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\app\\(auth)\\reset-password\\page.tsx"
+2026-07-30T18:11:01.911912Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\app\\(auth)\\verify-email\\page.tsx"
+2026-07-30T18:11:01.911920Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\lib\\auth.ts"
+2026-07-30T18:11:01.912155Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\app\\admin\\page.tsx"
+2026-07-30T18:11:01.912166Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\lib\\mail.ts"
+2026-07-30T18:11:01.912376Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\app\\api\\auth\\[...nextauth]\\route.ts"
+2026-07-30T18:11:01.912470Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\lib\\prisma.ts"
+2026-07-30T18:11:01.912669Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\app\\api\\forgot-password\\route.ts"
+2026-07-30T18:11:01.912691Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\lib\\rate-limit.ts"
+2026-07-30T18:11:01.912703Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\db-seed.md"
+2026-07-30T18:11:01.912876Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\app\\api\\register\\route.ts"
+2026-07-30T18:11:01.912893Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\lib\\tokens.ts"
+2026-07-30T18:11:01.913083Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\app\\api\\reset-password\\route.ts"
+2026-07-30T18:11:01.913114Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\middleware.ts"
+2026-07-30T18:11:01.913277Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\app\\api\\verify-email\\route.ts"
+2026-07-30T18:11:01.913313Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\types\\next-auth.d.ts"
+2026-07-30T18:11:01.913518Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\tsconfig.json"
+2026-07-30T18:11:01.913665Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\debug.md"
+2026-07-30T18:11:01.914208Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-compute\\references\\app-deploy-cli.md"
+2026-07-30T18:11:01.914396Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\migrate-resolve.md"
+2026-07-30T18:11:01.914443Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\dev.md"
+2026-07-30T18:11:01.915215Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-compute\\references\\compute-config.md"
+2026-07-30T18:11:01.915215Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\migrate-status.md"
+2026-07-30T18:11:01.915215Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\format.md"
+2026-07-30T18:11:01.916171Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-compute\\references\\create-prisma.md"
+2026-07-30T18:11:01.916175Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\studio.md"
+2026-07-30T18:11:01.916171Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\generate.md"
+2026-07-30T18:11:01.917386Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-compute\\references\\frameworks.md"
+2026-07-30T18:11:01.917418Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\validate.md"
+2026-07-30T18:11:01.917534Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\init.md"
+2026-07-30T18:11:01.918476Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-compute\\references\\sdk-api.md"
+2026-07-30T18:11:01.918531Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\mcp.md"
+2026-07-30T18:11:01.918542Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\SKILL.md"
+2026-07-30T18:11:01.918882Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-postgres-setup\\references\\api-basics.md"
+2026-07-30T18:11:01.919555Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\migrate-deploy.md"
+2026-07-30T18:11:01.919565Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-compute\\references\\troubleshooting.md"
+2026-07-30T18:11:01.920628Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-compute\\SKILL.md"
+2026-07-30T18:11:01.920628Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\migrate-dev.md"
+2026-07-30T18:11:01.921787Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-database-setup\\references\\cockroachdb.md"
+2026-07-30T18:11:01.921787Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\migrate-diff.md"
+2026-07-30T18:11:01.923111Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-database-setup\\references\\mongodb.md"
+2026-07-30T18:11:01.923144Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-cli\\references\\migrate-reset.md"
+2026-07-30T18:11:01.924071Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-client-api\\references\\filters.md"
+2026-07-30T18:11:01.924132Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-database-setup\\references\\mysql.md"
+2026-07-30T18:11:01.925051Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-database-setup\\references\\postgresql.md"
+2026-07-30T18:11:01.925051Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-client-api\\references\\model-queries.md"
+2026-07-30T18:11:01.925518Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-client-api\\references\\client-methods.md"
+2026-07-30T18:11:01.926055Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-database-setup\\references\\prisma-client-setup.md"
+2026-07-30T18:11:01.926371Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-client-api\\references\\query-options.md"
+2026-07-30T18:11:01.926891Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-database-setup\\references\\prisma-postgres.md"
+2026-07-30T18:11:01.927406Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-client-api\\references\\raw-queries.md"
+2026-07-30T18:11:01.928006Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-database-setup\\references\\sqlite.md"
+2026-07-30T18:11:01.928375Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-client-api\\references\\relations.md"
+2026-07-30T18:11:01.928945Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-database-setup\\references\\sqlserver.md"
+2026-07-30T18:11:01.929316Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-client-api\\references\\transactions.md"
+2026-07-30T18:11:01.929361Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-postgres-setup\\references\\auth.md"
+2026-07-30T18:11:01.929373Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-client-api\\references\\constructor.md"
+2026-07-30T18:11:01.929878Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-database-setup\\SKILL.md"
+2026-07-30T18:11:01.930201Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-client-api\\SKILL.md"
+2026-07-30T18:11:01.930487Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\prisma\\schema.prisma"
+2026-07-30T18:11:01.930771Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\prisma.config.ts"
+2026-07-30T18:11:01.930771Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-driver-adapter-implementation\\SKILL.md"
+2026-07-30T18:11:01.931686Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\public\\file.svg"
+2026-07-30T18:11:01.931811Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-mongodb-upgrade\\references\\client-api-mapping.md"
+2026-07-30T18:11:01.932626Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\public\\globe.svg"
+2026-07-30T18:11:01.932702Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-mongodb-upgrade\\references\\decision-stay-or-migrate.md"
+2026-07-30T18:11:01.932734Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\AGENTS.md"
+2026-07-30T18:11:01.933747Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-mongodb-upgrade\\references\\migrations-mapping.md"
+2026-07-30T18:11:01.933784Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\public\\next.svg"
+2026-07-30T18:11:01.934601Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\public\\vercel.svg"
+2026-07-30T18:11:01.934621Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-mongodb-upgrade\\references\\schema-contract-mapping.md"
+2026-07-30T18:11:01.934622Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-postgres-setup\\references\\endpoints.md"
+2026-07-30T18:11:01.935545Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\public\\window.svg"
+2026-07-30T18:11:01.935556Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-mongodb-upgrade\\references\\verify-cutover-checklist.md"
+2026-07-30T18:11:01.935601Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\c --noEmit"
+2026-07-30T18:11:01.936503Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-mongodb-upgrade\\SKILL.md"
+2026-07-30T18:11:01.936506Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-upgrade-v7\\references\\env-variables.md"
+2026-07-30T18:11:01.937076Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\CLAUDE.md"
+2026-07-30T18:11:01.937425Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\eslint.config.mjs"
+2026-07-30T18:11:01.937478Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-postgres\\references\\console-and-connections.md"
+2026-07-30T18:11:01.937478Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-upgrade-v7\\references\\esm-support.md"
+2026-07-30T18:11:01.938174Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\next.config.ts"
+2026-07-30T18:11:01.938375Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-upgrade-v7\\references\\prisma-config.md"
+2026-07-30T18:11:01.938379Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-postgres\\references\\create-db-cli.md"
+2026-07-30T18:11:01.938460Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\package.json"
+2026-07-30T18:11:01.939343Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\postcss.config.mjs"
+2026-07-30T18:11:01.939343Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-upgrade-v7\\references\\removed-features.md"
+2026-07-30T18:11:01.939349Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-postgres\\references\\management-api-sdk.md"
+2026-07-30T18:11:01.940231Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-upgrade-v7\\SKILL.md"
+2026-07-30T18:11:01.940289Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-upgrade-v7\\references\\schema-changes.md"
+2026-07-30T18:11:01.940300Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-postgres\\references\\management-api.md"
+2026-07-30T18:11:01.941129Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-postgres-setup\\references\\prisma7-client.md"
+2026-07-30T18:11:01.941175Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-postgres\\SKILL.md"
+2026-07-30T18:11:01.941182Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.gitattributes"
+2026-07-30T18:11:01.942403Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-postgres-setup\\SKILL.md"
+2026-07-30T18:11:01.943503Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-upgrade-v7\\references\\accelerate-users.md"
+2026-07-30T18:11:01.945105Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\.agents\\skills\\prisma-upgrade-v7\\references\\driver-adapters.md"
+2026-07-30T18:11:01.945360Z  INFO discover_sources: tailwindcss_oxide::scanner: exit
+2026-07-30T18:11:01.945398Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2026-07-30T18:11:01.945486Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2026-07-30T18:11:01.945524Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2026-07-30T18:11:01.956758Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2026-07-30T18:11:01.956841Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2026-07-30T18:11:01.956887Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2026-07-30T18:11:01.956917Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2026-07-30T18:11:01.958020Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "C:\\Users\\Keketso Leu\\Documents\\GitHub\\Auth System\\src\\app\\globals.css"
+2026-07-30T18:11:01.958074Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2026-07-30T18:11:01.958102Z  INFO extract_candidates:extract_css_variables: tailwindcss_oxide::scanner: enter
+2026-07-30T18:11:01.958146Z  INFO extract_candidates:extract_css_variables:extract: tailwindcss_oxide::scanner: enter
+2026-07-30T18:11:01.958354Z  INFO extract_candidates:extract_css_variables:extract: tailwindcss_oxide::scanner: exit
+2026-07-30T18:11:01.958387Z  INFO extract_candidates:extract_css_variables: tailwindcss_oxide::scanner: exit
+2026-07-30T18:11:01.959693Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2026-07-30T18:11:01.962762Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2026-07-30T18:11:01.962816Z  INFO get_files:discover_sources: tailwindcss_oxide::scanner: enter
+2026-07-30T18:11:01.962839Z  INFO get_files:discover_sources: tailwindcss_oxide::scanner: exit
+2026-07-30T18:11:01.963269Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2026-07-30T18:11:01.965209Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2026-07-30T18:11:01.965261Z  INFO get_globs:discover_sources: tailwindcss_oxide::scanner: enter
+2026-07-30T18:11:01.965285Z  INFO get_globs:discover_sources: tailwindcss_oxide::scanner: exit
+2026-07-30T18:11:02.010701Z  INFO get_globs: tailwindcss_oxide::scanner: exit
