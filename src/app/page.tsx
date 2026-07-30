@@ -71,10 +71,10 @@ export default function Home() {
         {/* Stats */}
         <div className="mt-20 grid w-full max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4">
           {[
-            { value: "99.9%", label: "Uptime" },
-            { value: "<100ms", label: "Auth latency" },
-            { value: "JWT", label: "Secure tokens" },
-            { value: "SA", label: "Built in Joburg" },
+            { value: "bcrypt", label: "Password hashing" },
+            { value: "JWT", label: "Session strategy" },
+            { value: "RBAC", label: "Role-based access" },
+            { value: "OAuth", label: "Google sign-in" },
           ].map((stat) => (
             <div
               key={stat.label}
