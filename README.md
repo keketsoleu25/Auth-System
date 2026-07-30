@@ -1,8 +1,23 @@
-# 🔐 Auth System
+🔐 Auth System
+
+**Live demo:** [auth-system-cyan-one.vercel.app](https://auth-system-cyan-one.vercel.app)
 
 A full authentication system built with Next.js 16, Auth.js (NextAuth v5), Prisma, and PostgreSQL. Supports email/password and Google OAuth login, email verification, password reset, and role-based route protection.
 
 Built as a portfolio project to understand authentication architecture end-to-end — not just wiring up a library, but working through why each piece (session strategy, token expiry, role checks, rate limiting) is there.
+
+
+## 📸 Screenshots
+
+| Landing | Sign in |
+|---|---|
+| ![Landing page](https://github.com/user-attachments/assets/121f25a4-d064-460e-b545-c5e0a6239f2f) | ![Sign in](https://github.com/user-attachments/assets/7063b018-c21c-44f3-a91b-38201e1496e0) |
+
+| Register | Dashboard |
+|---|---|
+| ![Register](https://github.com/user-attachments/assets/685b0bb0-9a73-4b86-b9f1-27b2cd24905e) | ![Dashboard](https://github.com/user-attachments/assets/b33ea8e7-cca6-4be5-a5a7-c1646b50702b) |
+
+*(Add your own screenshots to a `/screenshots` folder in the repo root — landing page, sign in, register, dashboard, and admin panel are the ones referenced above.)*
 
 ## ✨ Features
 
@@ -32,12 +47,13 @@ Built as a portfolio project to understand authentication architecture end-to-en
 | Framework | Next.js 16 (App Router) |
 | Language | TypeScript |
 | Authentication | Auth.js (NextAuth v5) |
-| Database | PostgreSQL |
+| Database | PostgreSQL (Neon) |
 | ORM | Prisma 7 (with `@prisma/adapter-pg` driver adapter) |
 | Validation | Zod |
 | Password Hashing | bcryptjs |
 | Email | Resend |
 | Styling | Tailwind CSS |
+| Hosting | Vercel |
 
 ## 📁 Project Structure
 
@@ -90,7 +106,7 @@ npm run dev
 |---|---|
 | `DATABASE_URL` | PostgreSQL connection string (e.g. from Neon) |
 | `AUTH_SECRET` | Generate with `npx auth secret` |
-| `NEXTAUTH_URL` | `http://localhost:3000` locally |
+| `NEXTAUTH_URL` | `http://localhost:3000` locally, your production URL when deployed |
 | `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` | From Google Cloud Console; redirect URI must be `<NEXTAUTH_URL>/api/auth/callback/google` |
 | `RESEND_API_KEY` | From resend.com |
 | `EMAIL_FROM` | `onboarding@resend.dev` works out of the box for testing without domain verification |
@@ -100,7 +116,7 @@ npm run dev
 - How session strategy (JWT vs. database sessions) actually works under the hood in Auth.js, and why middleware needs to run on the Node.js runtime rather than Edge once a database driver adapter is involved
 - Token-based flows (email verification, password reset) — generation, expiry, and why email enumeration needs to be prevented by design, not as an afterthought
 - Why rate limiting matters on public-facing auth endpoints, and the tradeoffs of an in-memory limiter vs. a distributed one
-- Debugging real deployment/tooling friction: Prisma 7's driver adapter requirement, Edge Runtime incompatibilities, stale build caches, and workspace-root resolution issues
+- Debugging real deployment/tooling friction: Prisma 7's driver adapter requirement (and the `postinstall: prisma generate` fix needed for Vercel), Edge Runtime incompatibilities, stale build caches, workspace-root resolution issues, and environment variable configuration between local and production
 
 ## 📌 Possible next steps
 
@@ -108,7 +124,7 @@ npm run dev
 - Real Prisma migration history instead of `db push`
 - Rate limiting on the credentials login path itself (harder — needs a different approach than the route-handler pattern used for register/forgot-password, since login goes through Auth.js's internal `authorize` callback)
 - Two-factor authentication
-- Deployed demo link
+- Custom domain and verified sending domain for production email
 
 ## 📖 Notes
 
