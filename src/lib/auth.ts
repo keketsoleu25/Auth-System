@@ -58,16 +58,20 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     }),
   ],
   callbacks: {
-    async jwt({ token, user, account }) {
+    async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
         token.role = user.role ?? "USER";
       }
 
-      if (account?.provider === "google" && user?.email) {
+      // OAuth users can be returned without our custom role field on
+      // subsequent requests. Keep the JWT synchronized with the database.
+      if (token.email) {
         const dbUser = await prisma.user.findUnique({
-          where: { email: user.email },
+          where: { email: token.email },
+          select: { id: true, role: true },
         });
+
         if (dbUser) {
           token.id = dbUser.id;
           token.role = dbUser.role;
@@ -78,8 +82,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     },
     async session({ session, token }) {
       if (session.user) {
-        session.user.id = token.id as string;
-        session.user.role = token.role as "USER" | "ADMIN";
+        session.user.id = (token.id as string | undefined) ?? token.sub ?? "";
+        session.user.role = (token.role as "USER" | "ADMIN" | undefined) ?? "USER";
       }
       return session;
     },
